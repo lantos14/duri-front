@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { testAction } from '../actions/actions';
 import '../styles/styles.scss';
 
+import { Header } from '../components/header';
+
 export class HomePage extends React.Component {
 
   reduceTest = () => {
@@ -12,10 +14,8 @@ export class HomePage extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>FunOfBooks</h1>
-        <button onClick={() => this.reduceTest()}>REDUX TEST</button>
-        <p>{this.props.text}</p>
+      <div id="home">
+        <Header />
       </div>
     )
   }
@@ -33,8 +33,8 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-    action: testAction,
-  };
+  action: testAction,
+};
 
 export default connect(
   mapStateToProps,
