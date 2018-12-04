@@ -6,7 +6,7 @@ import '../styles/styles.scss';
 
 import { Header } from '../components/header';
 
-export class HomePage extends React.Component {
+export class LandingPage extends React.Component {
 
   reduceTest = () => {
     this.props.action('success');
@@ -21,7 +21,7 @@ export class HomePage extends React.Component {
   }
 }
 
-HomePage.propTypes = {
+LandingPage.propTypes = {
   action: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
 };
@@ -39,4 +39,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomePage);
+)(LandingPage);
