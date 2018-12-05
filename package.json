@@ -1,7 +1,7 @@
 {
-  "name": "funofbooks",
+  "name": "duri",
   "version": "0.1.0",
-  "description": "blog",
+  "description": "scraper",
   "engines": {
     "npm": ">=3"
   },

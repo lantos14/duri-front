@@ -5,6 +5,7 @@ import { testAction } from '../actions/actions';
 import '../styles/styles.scss';
 
 import { Header } from '../components/header';
+import { Content } from '../components/content';
 
 export class LandingPage extends React.Component {
 
@@ -16,6 +17,7 @@ export class LandingPage extends React.Component {
     return (
       <div id="home">
         <Header />
+        <Content />
       </div>
     )
   }

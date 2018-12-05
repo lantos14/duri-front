@@ -13,7 +13,7 @@ import { hot } from "react-hot-loader";
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className='switch'>
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route component={NotFoundPage} />
