@@ -1,12 +1,12 @@
 import React from 'react';
 import '../styles/styles.scss';
 
-
-export class Content extends React.Component {
+export class Card extends React.Component {
 
   render() {
     return (
-      <div id='content'>
+      <div className='card'>
+        {this.props.name}
       </div>
     )
   }
