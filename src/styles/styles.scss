@@ -26,13 +26,13 @@ html {
 
     #header {
       border: 1px solid black; // dev
-      flex-grow: 2;
       display: flex;
       align-items: flex-end;
       
       #menu {
         display: flex;
         justify-content: space-evenly;
+        align-items: flex-end;
         
         p {
           font-size: 60px;
@@ -43,8 +43,11 @@ html {
     }
     
     #content {
-      flex-grow: 1;
       background-color: white;
+    }
+
+    #next {
+      background-color: rgba(0, 0, 0, 0.1);
     }
   }
 }

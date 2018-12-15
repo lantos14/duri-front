@@ -6,8 +6,9 @@ import '../styles/styles.scss';
 
 import { Header } from '../components/header';
 import { Content } from '../components/content';
+import { Next } from '../components/next';
 
-export class LandingPage extends React.Component {
+export class ProductsTab extends React.Component {
 
   reduceTest = () => {
     this.props.action('success');
@@ -18,12 +19,13 @@ export class LandingPage extends React.Component {
       <div id="home">
         <Header />
         <Content />
+        <Next />
       </div>
     )
   }
 }
 
-LandingPage.propTypes = {
+ProductsTab.propTypes = {
   action: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
 };
@@ -41,4 +43,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LandingPage);
+)(ProductsTab);
