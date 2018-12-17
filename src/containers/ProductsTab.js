@@ -5,7 +5,7 @@ import { testAction } from '../actions/actions';
 import '../styles/styles.scss';
 
 import { Header } from '../components/header';
-import { Content } from '../components/content';
+import { ProductsContent } from '../components/productsContent';
 import { Next } from '../components/next';
 
 export class ProductsTab extends React.Component {
@@ -16,9 +16,9 @@ export class ProductsTab extends React.Component {
 
   render() {
     return (
-      <div id="home">
+      <div id="products-tab">
         <Header />
-        <Content />
+        <ProductsContent />
         <Next />
       </div>
     )

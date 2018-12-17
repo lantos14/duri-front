@@ -6,7 +6,9 @@ export class Next extends React.Component {
   render() {
     return (
       <div id='next'>
-        <button className="nextPage">Next</button>
+      <div className='btn-wrapper'>
+        {/* <img src='../img/right-arrow.svg' width='130px' height='130px'></img> */}
+      </div>
       </div>
     )
   }

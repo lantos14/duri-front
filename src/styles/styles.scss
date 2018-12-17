@@ -19,10 +19,11 @@ html {
   background-image: url("../img/pink-flower.jpg");
   background-size: cover;
   
-  #home {
-    display: flex;
-    flex-direction: column; 
-    height: 100vh;
+  #products-tab {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 6fr 1fr;
+    height: 100%;
 
     #header {
       border: 1px solid black; // dev
@@ -42,12 +43,27 @@ html {
       }
     }
     
-    #content {
+    #products-content {
       background-color: white;
     }
 
     #next {
-      background-color: rgba(0, 0, 0, 0.1);
+      position: relative;
+      
+      .btn-wrapper {
+        background-image: url('../img/right-arrow.svg');
+        position: absolute;
+        top: -90px;
+        left: 40%;
+        background-size: 50%;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-color: rgb(237, 162, 247);
+
+      }
     }
   }
 }
