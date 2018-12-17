@@ -45,6 +45,12 @@ html {
     
     #products-content {
       background-color: white;
+      display: flex;
+      overflow-y: scroll;
+      .card {
+        max-width: 700px;
+        max-height: 200px;
+      }
     }
 
     #next {

@@ -29,6 +29,7 @@
   "author": "lantos",
   "license": "MIT",
   "dependencies": {
+    "bulma": "^0.7.2",
     "connected-react-router": "4.4.1",
     "object-assign": "4.1.1",
     "react": "16.4.2",
