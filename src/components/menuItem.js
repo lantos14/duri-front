@@ -6,7 +6,7 @@ export class MenuItem extends React.Component {
 
   render() {
     return (
-        <div id='menu'>
+        <div className='menu-item'>
           <p>{this.props.name}</p>
         </div>
     )

@@ -5,9 +5,10 @@ import { testAction } from '../actions/actions';
 import '../styles/styles.scss';
 
 import { Header } from '../components/header';
-import { ProductsContent } from '../components/productsContent';
+import { ResultContent } from '../components/resultContent';
+import { Next } from '../components/next';
 
-export class ProductsPage extends React.Component {
+export class ResultTab extends React.Component {
 
   reduceTest = () => {
     this.props.action('success');
@@ -15,15 +16,16 @@ export class ProductsPage extends React.Component {
 
   render() {
     return (
-      <div id="home">
+      <div id="result-tab" className='tab'>
         <Header />
-        <ProductsContent />
+        <ResultContent />
+        <Next />
       </div>
     )
   }
 }
 
-ProductsPage.propTypes = {
+ResultTab.propTypes = {
   action: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
 };
@@ -41,4 +43,4 @@ const mapDispatchToProps = {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProductsPage);
+)(ResultTab);

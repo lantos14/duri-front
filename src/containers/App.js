@@ -1,6 +1,10 @@
 /* eslint-disable import/no-named-as-default */
 import { Route, Switch } from "react-router-dom";
+
 import ProductsTab from "./ProductsTab";
+import StoresTab from "./StoresTab";
+import ResultTab from "./ResultTab";
+
 import NotFoundPage from "./NotFoundPage";
 import PropTypes from "prop-types";
 import React from "react";
@@ -16,6 +20,8 @@ class App extends React.Component {
       <div className='switch'>
         <Switch>
           <Route exact path="/" component={ProductsTab} />
+          <Route exact path="/store" component={StoresTab} />
+          <Route exact path="/result" component={ResultTab} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>

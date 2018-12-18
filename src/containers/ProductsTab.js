@@ -16,7 +16,7 @@ export class ProductsTab extends React.Component {
 
   render() {
     return (
-      <div id="products-tab">
+      <div id="products-tab" className='tab'>
         <Header />
         <ProductsContent />
         <Next />
