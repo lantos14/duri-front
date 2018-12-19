@@ -19,7 +19,7 @@ export class StoresTab extends React.Component {
       <div id="stores-tab" className='tab'>
         <Header activeTab='Store' />
         <StoresContent />
-        <Next />
+        <Next nextTab='result'/>
       </div>
     )
   }

@@ -25,7 +25,7 @@ export class ProductsTab extends React.Component {
       <div id="products-tab" className='tab'>
         <Header activeTab='Product' />
         <ProductsContent list={this.state.productsList} />
-        <Next />
+        <Next nextTab='store'/>
       </div>
     )
   }

@@ -19,7 +19,7 @@ export class ResultTab extends React.Component {
       <div id="result-tab" className='tab'>
         <Header activeTab='Result' />
         <ResultContent />
-        <Next />
+        <Next nextTab='/'/>
       </div>
     )
   }
