@@ -9,7 +9,13 @@ import { ProductsContent } from '../components/productsContent';
 import { Next } from '../components/next';
 
 export class ProductsTab extends React.Component {
-
+  state = {
+    productsList: [
+      "ingek-blúzok",
+      "pulóverek-kardigánok",
+      "ruhák",
+    ]
+  }
   reduceTest = () => {
     this.props.action('success');
   }
@@ -17,8 +23,8 @@ export class ProductsTab extends React.Component {
   render() {
     return (
       <div id="products-tab" className='tab'>
-        <Header />
-        <ProductsContent />
+        <Header activeTab='Product' />
+        <ProductsContent list={this.state.productsList} />
         <Next />
       </div>
     )

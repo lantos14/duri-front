@@ -17,7 +17,7 @@ export class ResultTab extends React.Component {
   render() {
     return (
       <div id="result-tab" className='tab'>
-        <Header />
+        <Header activeTab='Result' />
         <ResultContent />
         <Next />
       </div>

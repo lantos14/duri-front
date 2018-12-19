@@ -17,7 +17,7 @@ export class StoresTab extends React.Component {
   render() {
     return (
       <div id="stores-tab" className='tab'>
-        <Header />
+        <Header activeTab='Store' />
         <StoresContent />
         <Next />
       </div>
