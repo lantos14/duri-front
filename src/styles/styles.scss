@@ -53,6 +53,21 @@ html {
       background-color: white;
       overflow: scroll;
       padding: 30px;
+
+      .tag {
+        background-color: #BA98FB;
+        color: white;
+        font-size: 50px;
+        padding: 50px;
+        margin: 20px;
+        border-radius: 50px;
+      }
+      
+      .tag-active {
+        background-color: #BE88E0;
+
+      }
+
       .card {
         border: 3px solid black;
         background-color: grey;

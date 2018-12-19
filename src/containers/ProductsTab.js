@@ -16,6 +16,7 @@ export class ProductsTab extends React.Component {
       "ruhák",
     ]
   }
+  
   reduceTest = () => {
     this.props.action('success');
   }

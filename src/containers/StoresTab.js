@@ -9,6 +9,12 @@ import { StoresContent } from '../components/storesContent';
 import { Next } from '../components/next';
 
 export class StoresTab extends React.Component {
+  state = {
+    storesList: [
+      "promod",
+      "hm",
+    ]
+  }
 
   reduceTest = () => {
     this.props.action('success');
@@ -18,8 +24,8 @@ export class StoresTab extends React.Component {
     return (
       <div id="stores-tab" className='tab'>
         <Header activeTab='Store' />
-        <StoresContent />
-        <Next nextTab='result'/>
+        <StoresContent list={this.state.storesList} />
+        <Next nextTab='result' />
       </div>
     )
   }
