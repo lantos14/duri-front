@@ -6,9 +6,9 @@ import '../styles/styles.scss';
 export default class Tag extends React.Component {
 
   render() {
-    const { name, index } = this.props;
+    const { name, index, tagFn } = this.props;
     return (
-      <span className="tag" id={index}>
+      <span className="tag" id={index} onClick={tagFn}>
         {name}
       </span>
     )
@@ -18,4 +18,5 @@ export default class Tag extends React.Component {
 Tag.propTypes = {
   name: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
+  tagFn: PropTypes.func.isRequired,
 };

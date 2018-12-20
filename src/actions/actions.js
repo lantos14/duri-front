@@ -10,9 +10,9 @@ export function example(settings) {
   };
 }
 
-export function testAction(msg) {
+export function regTag(tagName) {
   return {
-    type: 'ACTION_TEST_INITIATED',
-    payload: msg,
+    type: 'TAGNAME_REGISTRATION_INITIATED',
+    payload: tagName,
   };
 } 

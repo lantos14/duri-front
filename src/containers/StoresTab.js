@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { testAction } from '../actions/actions';
+import { regTag } from '../actions/actions';
 import '../styles/styles.scss';
 
 import { Header } from '../components/header';
@@ -16,8 +16,9 @@ export class StoresTab extends React.Component {
     ]
   }
 
-  reduceTest = () => {
-    this.props.action('success');
+  registerTag = (e) => {
+    console.log(e.target.innerText); // eslint-disable-line
+    this.props.action(e.target.innerText);
   }
 
   render() {
@@ -43,7 +44,7 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  action: testAction,
+  action: regTag,
 };
 
 export default connect(

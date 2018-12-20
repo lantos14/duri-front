@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { testAction } from '../actions/actions';
+import { regTag } from '../actions/actions';
 import '../styles/styles.scss';
 
 import { Header } from '../components/header';
@@ -17,15 +17,16 @@ export class ProductsTab extends React.Component {
     ]
   }
   
-  reduceTest = () => {
-    this.props.action('success');
+  registerTag = (e) => {
+    console.log(e.target.innerText); // eslint-disable-line
+    this.props.action(e.target.innerText);
   }
 
   render() {
     return (
       <div id="products-tab" className='tab'>
         <Header activeTab='Product' />
-        <ProductsContent list={this.state.productsList} />
+        <ProductsContent list={this.state.productsList} tagFn={this.registerTag} />
         <Next nextTab='store'/>
       </div>
     )
@@ -34,17 +35,17 @@ export class ProductsTab extends React.Component {
 
 ProductsTab.propTypes = {
   action: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
+  productsSelected: PropTypes.string.isRequired,
 };
 
 function mapStateToProps(state) {
   return {
-    text: state.testReducer.text,
+    productsSelected: state.masterList.productsSelected,
   };
 }
 
 const mapDispatchToProps = {
-  action: testAction,
+  action: regTag,
 };
 
 export default connect(
