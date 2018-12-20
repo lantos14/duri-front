@@ -10,16 +10,30 @@ export function example(settings) {
   };
 }
 
-export function regTag(tagName) {
+export function regProductTag(tagName) {
   return {
-    type: 'TAGNAME_REGISTRATION_INITIATED',
+    type: 'PRODUCT_REGISTRATION_INITIATED',
     payload: tagName,
   };
 } 
 
-export function delTag(tagName) {
+export function delProductTag(tagName) {
   return {
-    type: 'TAGNAME_REMOVAL_INITIATED',
+    type: 'PRODUCT_REMOVAL_INITIATED',
+    payload: tagName,
+  };
+} 
+
+export function regStoreTag(tagName) {
+  return {
+    type: 'STORE_REGISTRATION_INITIATED',
+    payload: tagName,
+  };
+} 
+
+export function delStoreTag(tagName) {
+  return {
+    type: 'STORE_REMOVAL_INITIATED',
     payload: tagName,
   };
 } 

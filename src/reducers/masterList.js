@@ -1,14 +1,15 @@
 export default function masterList(state = {
   productsSelected: [],
+  storesSelected: [],
 }, action) {
   switch (action.type) {
-    case 'TAGNAME_REGISTRATION_INITIATED': {
+    case 'PRODUCT_REGISTRATION_INITIATED': {
       return {
         ...state,
         productsSelected: [...state.productsSelected, action.payload],
       };
     }
-    case 'TAGNAME_REMOVAL_INITIATED': {
+    case 'PRODUCT_REMOVAL_INITIATED': {
       return {
         ...state,
         productsSelected: [
@@ -18,6 +19,21 @@ export default function masterList(state = {
       };
     }
 
+    case 'STORE_REGISTRATION_INITIATED': {
+      return {
+        ...state,
+        storesSelected: [...state.storesSelected, action.payload],
+      };
+    }
+    case 'STORE_REMOVAL_INITIATED': {
+      return {
+        ...state,
+        storesSelected: [
+          ...state.storesSelected.slice(0, state.storesSelected.indexOf(action.payload)),
+          ...state.storesSelected.slice(state.storesSelected.indexOf(action.payload) + 1)
+        ]
+      };
+    }
     default:
       return state;
   }

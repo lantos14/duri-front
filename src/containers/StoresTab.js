@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { regTag } from '../actions/actions';
+import { regStoreTag, delStoreTag } from '../actions/actions';
 import '../styles/styles.scss';
 
 import { Header } from '../components/header';
@@ -16,16 +16,28 @@ export class StoresTab extends React.Component {
     ]
   }
 
-  registerTag = (e) => {
-    console.log(e.target.innerText); // eslint-disable-line
-    this.props.action(e.target.innerText);
+  sendTagAction = (e) => {
+    const productName = e.target.innerText;
+    const modActiveTags = this.props.storesSelected;
+
+    if (modActiveTags.indexOf(productName) > -1) {
+      // if tag is already selected
+      this.props.delStoreTag(productName);
+      modActiveTags.splice(modActiveTags.indexOf(productName, 1));
+    } else {
+      // if tag is not selected yet
+      this.props.regStoreTag(productName);
+      modActiveTags.push(productName);
+      }
+    
+    e.target.classList.toggle('tag-active');
   }
 
   render() {
     return (
       <div id="stores-tab" className='tab'>
         <Header activeTab='Store' />
-        <StoresContent list={this.state.storesList} />
+        <StoresContent list={this.state.storesList} tagFn={this.sendTagAction} />
         <Next nextTab='result' />
       </div>
     )
@@ -33,18 +45,20 @@ export class StoresTab extends React.Component {
 }
 
 StoresTab.propTypes = {
-  action: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
+  regStoreTag: PropTypes.func.isRequired,
+  delStoreTag: PropTypes.func.isRequired,
+  storesSelected: PropTypes.array.isRequired,
 };
 
 function mapStateToProps(state) {
   return {
-    text: state.testReducer.text,
+    storesSelected: state.masterList.storesSelected,
   };
 }
 
 const mapDispatchToProps = {
-  action: regTag,
+  regStoreTag,
+  delStoreTag
 };
 
 export default connect(

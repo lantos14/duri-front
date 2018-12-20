@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { regTag, delTag } from '../actions/actions';
+import { regProductTag, delProductTag } from '../actions/actions';
 import '../styles/styles.scss';
 
 import { Header } from '../components/header';
@@ -23,11 +23,11 @@ export class ProductsTab extends React.Component {
 
     if (modActiveTags.indexOf(productName) > -1) {
       // if tag is already selected
-      this.props.delTag(productName);
+      this.props.delProductTag(productName);
       modActiveTags.splice(modActiveTags.indexOf(productName, 1));
     } else {
       // if tag is not selected yet
-      this.props.regTag(productName);
+      this.props.regProductTag(productName);
       modActiveTags.push(productName);
       }
     
@@ -46,8 +46,8 @@ export class ProductsTab extends React.Component {
 }
 
 ProductsTab.propTypes = {
-  regTag: PropTypes.func.isRequired,
-  delTag: PropTypes.func.isRequired,
+  regProductTag: PropTypes.func.isRequired,
+  delProductTag: PropTypes.func.isRequired,
   productsSelected: PropTypes.array.isRequired,
 };
 
@@ -58,8 +58,8 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  regTag,
-  delTag
+  regProductTag,
+  delProductTag
 };
 
 export default connect(
