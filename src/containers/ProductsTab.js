@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { regTag } from '../actions/actions';
+import { regTag, delTag } from '../actions/actions';
 import '../styles/styles.scss';
 
 import { Header } from '../components/header';
@@ -14,19 +14,31 @@ export class ProductsTab extends React.Component {
       "ingek-blúzok",
       "pulóverek-kardigánok",
       "ruhák",
-    ]
+    ],
   }
   
-  registerTag = (e) => {
-    console.log(e.target.innerText); // eslint-disable-line
-    this.props.action(e.target.innerText);
+  sendTagAction = (e) => {
+    const productName = e.target.innerText;
+    const modActiveTags = this.props.productsSelected;
+
+    if (modActiveTags.indexOf(productName) > -1) {
+      // if tag is already selected
+      this.props.delTag(productName);
+      modActiveTags.splice(modActiveTags.indexOf(productName, 1));
+    } else {
+      // if tag is not selected yet
+      this.props.regTag(productName);
+      modActiveTags.push(productName);
+      }
+    
+    e.target.classList.toggle('tag-active');
   }
 
   render() {
     return (
       <div id="products-tab" className='tab'>
         <Header activeTab='Product' />
-        <ProductsContent list={this.state.productsList} tagFn={this.registerTag} />
+        <ProductsContent list={this.state.productsList} tagFn={this.sendTagAction} />
         <Next nextTab='store'/>
       </div>
     )
@@ -34,8 +46,9 @@ export class ProductsTab extends React.Component {
 }
 
 ProductsTab.propTypes = {
-  action: PropTypes.func.isRequired,
-  productsSelected: PropTypes.string.isRequired,
+  regTag: PropTypes.func.isRequired,
+  delTag: PropTypes.func.isRequired,
+  productsSelected: PropTypes.array.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -45,7 +58,8 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  action: regTag,
+  regTag,
+  delTag
 };
 
 export default connect(

@@ -16,3 +16,10 @@ export function regTag(tagName) {
     payload: tagName,
   };
 } 
+
+export function delTag(tagName) {
+  return {
+    type: 'TAGNAME_REMOVAL_INITIATED',
+    payload: tagName,
+  };
+} 
