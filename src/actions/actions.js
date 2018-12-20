@@ -15,25 +15,35 @@ export function regProductTag(tagName) {
     type: 'PRODUCT_REGISTRATION_INITIATED',
     payload: tagName,
   };
-} 
+}
 
 export function delProductTag(tagName) {
   return {
     type: 'PRODUCT_REMOVAL_INITIATED',
     payload: tagName,
   };
-} 
+}
 
 export function regStoreTag(tagName) {
   return {
     type: 'STORE_REGISTRATION_INITIATED',
     payload: tagName,
   };
-} 
+}
 
 export function delStoreTag(tagName) {
   return {
     type: 'STORE_REMOVAL_INITIATED',
     payload: tagName,
   };
-} 
+}
+
+export function getResult(products, stores) {
+  return {
+    type: 'RESULT_REQUEST_INITIATED',
+    payload: {
+      products,
+      stores
+    }
+  };
+}

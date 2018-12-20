@@ -1,6 +1,7 @@
 export default function masterList(state = {
   productsSelected: [],
   storesSelected: [],
+  result: [],
 }, action) {
   switch (action.type) {
     case 'PRODUCT_REGISTRATION_INITIATED': {
@@ -34,6 +35,14 @@ export default function masterList(state = {
         ]
       };
     }
+
+    case 'RESULT_SUCCEEDED': {
+      return {
+        ...state,
+        result: action.payload,
+      };
+    }
+
     default:
       return state;
   }
