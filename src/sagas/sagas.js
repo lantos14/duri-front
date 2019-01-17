@@ -4,10 +4,11 @@ import { takeEvery, put, call } from 'redux-saga/effects';
 import * as API from '../services/api';
 
 function* getResult(action) {
-  console.log('action.payload', action.payload);
+  console.log('action.payload', action.payload.products[0], action.payload.stores[0]);
   try {
     yield delay(100);
-    const data = yield call(API.getData, `http://localhost:3000/?products=${action.payload.products[0]}&stores=${action.payload.stores[0]}`);
+
+    const data = yield call(API.getData, `http://localhost:3000/products?store=${action.payload.products[0]}&type=${action.payload.stores[0]}`);
     yield put({
       type: 'RESULT_SUCCEEDED',
       payload: data,
