@@ -4,7 +4,7 @@
   "description": "scraper",
   "engines": {
     "npm": "6.4.x",
-    "node": "10.14.x",
+    "node": "10.14.x"
   },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
