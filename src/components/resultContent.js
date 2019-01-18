@@ -15,8 +15,14 @@ export class ResultContent extends React.Component {
           <div className='columns is-multiline is-mobile'>
             {
               result.map((el, i) =>
-                <Card key={i} img={el.img} name={el.name} price={el.price}
+                <div className="card-container" key={i} id={el._id} >
+                <Card 
+                img={el.img} 
+                name={el.name} 
+                price={el.price}
+                store={el.store}
                 />
+              </div>
               )
             }
 

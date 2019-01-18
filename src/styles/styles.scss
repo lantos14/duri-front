@@ -68,11 +68,8 @@ html {
 
       }
 
-      .card {
-        border: 3px solid black;
-        background-color: grey;
-        margin: 15px 0;
-      }
+      @import './card-container.scss';
+
     }
 
   }
