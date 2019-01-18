@@ -8,10 +8,14 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import rootReducer from '../reducers';
 import rootSaga from '../sagas/sagas'
 
+
+/* eslint-disable no-console */
+
 export const history = createHistory();
 const connectRouterHistory = connectRouter(history);
 
 function configureStoreProd(initialState) {
+  console.log('configureStoreProd: ');
   const reactRouterMiddleware = routerMiddleware(history);
   const sagaMiddleware = createSagaMiddleware();
   const middlewares = [
@@ -24,16 +28,20 @@ function configureStoreProd(initialState) {
     sagaMiddleware,
   ];
 
-  sagaMiddleware.run(rootSaga);
-
-  return createStore(
-    connectRouterHistory(rootReducer), 
+  
+  const store = createStore(
+    connectRouterHistory(rootReducer),  
     initialState, 
     compose(applyMiddleware(...middlewares))
-  );
+    );
+    
+  sagaMiddleware.run(rootSaga);
+  
+  return store;
 }
 
 function configureStoreDev(initialState) {
+  console.log('configureStoreDev: ');
   const reactRouterMiddleware = routerMiddleware(history);
   const sagaMiddleware = createSagaMiddleware();
   const middlewares = [
@@ -68,6 +76,7 @@ function configureStoreDev(initialState) {
   
   return store;
 }
+console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
 
 const configureStore = process.env.NODE_ENV === 'production' ? configureStoreProd : configureStoreDev;
 
