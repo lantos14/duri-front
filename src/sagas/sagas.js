@@ -7,7 +7,7 @@ function* getResult(action) {
   try {
     yield delay(100);
 
-    const data = yield call(API.getData, `http://localhost:3000/products?store=${action.payload.stores[0]}&type=${action.payload.products[0]}`);
+    const data = yield call(API.getData, `http://localhost:3000/products?store=${action.payload.stores}&type=${action.payload.products}`);
     yield put({
       type: 'RESULT_SUCCEEDED',
       payload: data,

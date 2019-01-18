@@ -7,8 +7,28 @@ import { Card } from '../components/card';
 
 export class ResultContent extends React.Component {
 
+  shuffleProducts = (productList) => {
+    const promodProductList = productList.filter(product => {
+      return product.store === 'promod';
+    });
+    
+    const hmProductList = productList.filter(product => {
+      return product.store === 'hm';
+    });
+
+    const shuffledList = [];
+    
+    for (let i = 0; i < productList.length; i++) {
+      promodProductList[i] && shuffledList.push(promodProductList[i]);
+      hmProductList[i] && shuffledList.push(hmProductList[i]);
+    }
+    
+    return shuffledList;
+  }
+
   render() {
-    const { result } = this.props;
+    const result = this.shuffleProducts(this.props.result);
+
     if (result.length !== 0) {
       return (
         <div id='result-content' className='content'>
