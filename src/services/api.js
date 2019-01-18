@@ -5,7 +5,7 @@ export function getData(url) {
     }
   })
     .then(response => response.json())
-    .then(response => response.result)
+    .then(response => response.products)
     .catch((error) => {
       throw error;
     });
