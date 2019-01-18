@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "scraper",
   "engines": {
-    "npm": ">=3"
+    "npm": "6.4.x",
+    "node": "10.14.x",
   },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
