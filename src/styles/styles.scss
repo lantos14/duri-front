@@ -8,6 +8,10 @@ body,
   height: 100vh;
 }
 
+@import './variables.scss';
+@import './mixins.scss';
+
+
 html {
   background-image: url("../img/pink-flower.jpg");
   background-size: cover;
@@ -55,7 +59,7 @@ html {
       padding: 30px;
 
       .tag {
-        background-color: #BA98FB;
+        background-color: $simplePink;
         color: white;
         font-size: 50px;
         padding: 50px;
@@ -64,7 +68,8 @@ html {
       }
       
       .tag-active {
-        background-color: #BE88E0;
+        background-color: $blueBerry;
+        box-shadow: 5px 10px;
 
       }
 
@@ -81,7 +86,6 @@ html {
     position: relative;
 
     .btn-wrapper {
-      background-image: url("../img/right-arrow.svg");
       position: absolute;
       top: -90px;
       left: 40%;
@@ -92,6 +96,17 @@ html {
       width: 200px;
       border-radius: 50%;
       background-color: rgb(237, 162, 247);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include hover();
+
+      img {
+        display: block;
+        width: 150px;
+        height: 150px;
+      }
     }
   }
 }

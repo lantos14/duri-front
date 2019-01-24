@@ -47,3 +47,9 @@ export function getResult(products, stores) {
     }
   };
 }
+
+export function delResult() {
+  return {
+    type: 'RESULT_DELETED',
+  };
+}

@@ -1,0 +1,9 @@
+@mixin hover() {
+  &:hover {
+    filter: brightness(120%);
+  }
+  &:active {
+    filter: brightness(90%);
+    box-shadow: 1px 1px $blueBerry;
+  }
+}

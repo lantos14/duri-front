@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import '../styles/styles.scss';
 
-import { getResult } from '../actions/actions';
+import { getResult, delProductTag, delStoreTag, delResult } from '../actions/actions';
 import { Header } from '../components/header';
 import { ResultContent } from '../components/resultContent';
 import { Next } from '../components/next';
@@ -14,12 +14,18 @@ export class ResultTab extends React.Component {
     this.props.getResult(this.props.productsSelected, this.props.storesSelected);
   }
 
+  clearSelection = () => {
+    this.props.delStoreTag('all');
+    this.props.delProductTag('all');
+    this.props.delResult();
+  }
+
   render() {
     return (
       <div id="result-tab" className='tab'>
         <Header activeTab='Result' />
         <ResultContent result={this.props.result || []}/>
-        <Next nextTab='/' />
+        <Next nextTab='/' clearSelection={this.clearSelection} />
       </div>
     )
   }
@@ -27,6 +33,9 @@ export class ResultTab extends React.Component {
 
 ResultTab.propTypes = {
   getResult: PropTypes.func.isRequired,
+  delProductTag: PropTypes.func.isRequired,
+  delStoreTag: PropTypes.func.isRequired,
+  delResult: PropTypes.func.isRequired,
   result: PropTypes.array.isRequired,
   productsSelected: PropTypes.array.isRequired,
   storesSelected: PropTypes.array.isRequired,
@@ -42,6 +51,9 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
   getResult,
+  delProductTag,
+  delStoreTag,
+  delResult,
 };
 
 export default connect(
