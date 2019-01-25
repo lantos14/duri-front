@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/styles.scss';
 import { history } from '../store/configureStore';
+import nextArrowImg from '../img/next-arrow.png'
+import repeatImg from '../img/repeat.png'
 
 export class Next extends React.Component {
 
@@ -14,7 +16,7 @@ export class Next extends React.Component {
     return (
       <div id='next'>
       <div className='btn-wrapper' onClick={this.onClick}>
-      <img src={this.props.nextTab !== '/' ? '../img/next-arrow.png' : '../img/repeat.png' }></img>
+      <img src={this.props.nextTab !== '/' ? nextArrowImg : repeatImg }></img>
       </div>
       </div>
     )
