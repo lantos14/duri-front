@@ -1,7 +1,5 @@
 You can visit this website at http://duri.funofbooks.hu
 
-!! Beware, ***the site is only looking good in mobile view***, I'll try to implement bigger viewports as well, if my time will let it !!
-
 # Duri web application
 
 Check out the application's [backend](https://github.com/lantos14/duri) as well.
