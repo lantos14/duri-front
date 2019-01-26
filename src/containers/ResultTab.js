@@ -24,7 +24,7 @@ export class ResultTab extends React.Component {
     return (
       <div id="result-tab" className='tab'>
         <Header activeTab='Result' />
-        <ResultContent result={this.props.result || []}/>
+        <ResultContent result={this.props.result || []} loading={this.props.loading}/>
         <Next nextTab='/' clearSelection={this.clearSelection} />
       </div>
     )
@@ -39,6 +39,7 @@ ResultTab.propTypes = {
   result: PropTypes.array.isRequired,
   productsSelected: PropTypes.array.isRequired,
   storesSelected: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -46,6 +47,7 @@ function mapStateToProps(state) {
     result: state.masterList.result,
     productsSelected: state.masterList.productsSelected,
     storesSelected: state.masterList.storesSelected,
+    loading: state.masterList.loading,
   };
 }
 

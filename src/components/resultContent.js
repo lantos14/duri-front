@@ -28,8 +28,9 @@ export class ResultContent extends React.Component {
 
   render() {
     const result = this.shuffleProducts(this.props.result);
+    const loading = this.props.loading;
 
-    if (result.length !== 0) {
+    if (!loading && result.length !== 0) {
       return (
         <div id='result-content' className='content'>
           <div className='columns is-multiline is-mobile'>
@@ -51,8 +52,8 @@ export class ResultContent extends React.Component {
       )
     } else {
       return (
-        <div id='result-content' className='content'>
-          <div className='columns is-multiline is-mobile' />
+        <div id='result-content' className='content-loading'>
+          <img className='loading-animation' src='../img/loading.gif'></img>
         </div>
       );
     }
@@ -61,4 +62,5 @@ export class ResultContent extends React.Component {
 
 ResultContent.propTypes = {
   result: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
