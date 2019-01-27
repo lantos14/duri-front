@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import loadingImg from '../img/loading.gif';
 import 'bulma/css/bulma.css';
 import '../styles/styles.scss';
 
@@ -53,7 +54,7 @@ export class ResultContent extends React.Component {
     } else {
       return (
         <div id='result-content' className='content-loading'>
-          <img className='loading-animation' src='../img/loading.gif'></img>
+          <img className='loading-animation' src={loadingImg}></img>
         </div>
       );
     }
