@@ -15,6 +15,8 @@ export class ProductsTab extends React.Component {
       "pulóverek-kardigánok",
       "ruhák",
       "nadrágok",
+      "szoknyák",
+      "felsők",
     ],
   }
   
