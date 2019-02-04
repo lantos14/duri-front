@@ -1,4 +1,8 @@
 /* Variables */
+@import './variables.scss';
+@import './mixins.scss';
+@import './breakpoints.scss';
+@import './loading.scss';
 
 /* Styles */
 html,
@@ -6,13 +10,9 @@ body,
 #app,
 .switch {
   height: 100%;
-  margin: 50px;
+  @include flexJustifyCenter();
 }
 
-@import './variables.scss';
-@import './mixins.scss';
-@import './breakpoints.scss';
-@import './loading.scss';
 
 
 html {
@@ -70,8 +70,8 @@ html {
 
     .content {
       background-color: white;
-      overflow-y: scroll;
       padding: 30px;
+      border-radius: 0 0 20px 20px;
 
       .tag {
         background-color: $simplePink;
@@ -100,6 +100,9 @@ html {
 
     }
 
+    #result-content {
+      overflow-y: scroll;
+    }
   }
 
 
