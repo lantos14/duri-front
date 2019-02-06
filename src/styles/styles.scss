@@ -29,22 +29,23 @@ html {
       bottom: 0;
       left: 0;
       right: 0;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: flex-end;
-      @include media-breakpoint-up(md) {
-        justify-content: space-around;
+      
+      @include media-breakpoint-down(md) {
+        justify-content: space-evenly;
       }
 
       p {
-        font-size: 60px;
+        font-size: 40px;
+        width: 263px;
         margin: 0;
-        width: 300px;
         text-align: center;
         cursor: default;
                
-        @include media-breakpoint-up(md) {
-          font-size: 40px;
-          width: 263px;
+        @include media-breakpoint-down(md) {
+          font-size: 60px;
+          width: 300px;
         }
       }
       
@@ -61,8 +62,9 @@ html {
 
   .tab {
     height: 100%;       
-    @include media-breakpoint-up(md) {
-      width: 800px;
+    width: 800px;
+    @include media-breakpoint-down(md) {
+      width: 910px;
     }
     display: grid;
     grid-template-columns: 1fr;
@@ -76,16 +78,16 @@ html {
       .tag {
         background-color: $simplePink;
         color: white;
-        font-size: 50px;
-        padding: 50px;
+        font-size: 25px;
+        padding: 25px;
         margin: 20px;
         border-radius: 50px;
         cursor: default;
                
-        @include media-breakpoint-up(md) {
-          font-size: 25px;
-          padding: 25px;
-          margin: 20px;
+        @include media-breakpoint-down(md) {
+          font-size: 50px;
+          padding: 50px;
+          margin: 20px 5px;
           border-radius: 50px;
         }
       }
@@ -114,36 +116,36 @@ html {
     .btn-wrapper {
       z-index: 2;
       position: absolute;
-      top: -90px;
+      top: -70px;
       left: 43%;
       background-size: 50%;
       background-position: 50%;
       background-repeat: no-repeat;
-      height: 200px;
-      width: 200px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
       background-color: rgb(237, 162, 247);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      border: 1px solid black;
       @include hover();
 
-      @include media-breakpoint-up(md) {
-        top: -70px;
-        width: 100px;
-        height: 100px;
-        border: 1px solid black;
+      @include media-breakpoint-down(md) {
+        top: -90px;
+        height: 200px;
+        width: 200px;
       }
 
       img {
         display: block;
-        width: 150px;
-        height: 150px;
+        width: 75px;
+        height: 75px;
 
-        @include media-breakpoint-up(md) {
-          width: 75px;
-          height: 75px;
+        @include media-breakpoint-down(md) {
+          width: 150px;
+          height: 150px;
         }
       }
 
